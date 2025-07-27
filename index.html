@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .active {
+        background-color: red;
+        color: white;
+      }
+    </style>
+
+    <title>PH-TUBE</title>
+  </head>
+  <body>
+    <header></header>
+    <!-- nav is start -->
+    <nav
+      class="w-11/12 mx-auto flex justify-between border-b-2 py-5 border-[#17171720]"
+    >
+      <!-- phtube img  -->
+      <div class="ph">
+        <img src="Logo.png" alt="" class="w-[120px] mx-auto" />
+      </div>
+      <label class="input">
+        <svg
+          class="h-[1em] opacity-50"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <g
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-width="2.5"
+            fill="none"
+            stroke="currentColor"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </g>
+        </svg>
+        <input id="search-input" type="search" required placeholder="Search" />
+      </label>
+      <div class="Blog btn bg-red-600 text-white">Sort By View</div>
+    </nav>
+    <!-- btn start -->
+    <div id="category-container" class="flex justify-center py-5 gap-5">
+      <button id="btn-all" onclick="displayVideo()" class="btn btn-sm">
+        All
+      </button>
+    </div>
+    <!-- loading video -->
+    <div class="loading-video text-center py-10 hidden">
+      <span class="loading loading-dots loading-xl"></span>
+    </div>
+    <!-- video container -->
+    <section
+      id="video-container"
+      class="w-11/12 grid grid-cols-4 mx-auto gap-5"
+    >
+      <div
+        class="col-span-full flex flex-col justify-center items-center my-[200px]"
+      >
+        <img class="w-[120px]" src="Icon.png" alt="icon" />
+        <p class="text-2xl font-bold text-center">
+          Oops!! Sorry, There is no content here
+        </p>
+      </div>
+    </section>
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    <dialog id="video_detalis" class="modal">
+      <div class="modal-box">
+        <div id="detalis_container"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="index.js"></script>
+  </body>
+</html>
